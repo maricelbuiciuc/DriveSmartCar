@@ -36,23 +36,23 @@ public class EngineService implements Runnable {
 
         try {
 
-            ServerSocket listener = new ServerSocket(9090);
+            ServerSocket listener = new ServerSocket(7070);
             try {
 
-                // Create a JmDNS instance
+                // This line of code shows how to create a JmDNS instance
                 JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
 
-                // Register a service
-                ServiceInfo serviceInfo = ServiceInfo.create("_http._tcp.local.", "Audio Service", 9090, "can't be empty?");
+                // Here is the code for the registration of the service
+                ServiceInfo serviceInfo = ServiceInfo.create("_http._tcp.local.", "Engine Service", 7070, "can't be empty?");
                 jmdns.registerService(serviceInfo);
                 System.out.println("Engine Service is registered");
 
-                //print message
+                //Here we have the code for printing the message
                 while (true) {
                     Socket socket = listener.accept();
                     try {
                         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                        out.println("Engine is on!!!");
+                        out.println("Engine is on now!!!");
                     } finally {
                         socket.close();
                     }

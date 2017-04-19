@@ -19,5 +19,4 @@ public class Lights {
     public void setEngineIsON(boolean LightsAreON) {
         this.LightsAreON = LightsAreON;
     }
-
 }

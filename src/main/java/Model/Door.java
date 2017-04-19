@@ -19,5 +19,4 @@ public class Door {
     public void setDoorIsUnlock(boolean DoorIsUnlock) {
         this.DoorIsUnlock = DoorIsUnlock;
     }
-
 }
